@@ -1,52 +1,46 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-defineProps<{ msg: string }>()
-
-const count = ref(0)
-</script>
-
 <template>
-  <h1>{{ msg }}</h1>
-
-  <p>
-    Recommended IDE setup:
-    <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
-    +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-  </p>
-
-  <p>See <code>README.md</code> for more information.</p>
-
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Docs
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
-  </p>
-
-  <button type="button" @click="count++">count is: {{ count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  <el-row :gutter="20">
+    <el-col :span="16"><div class="grid-content bg-purple"></div></el-col>
+    <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+  </el-row>
+  <el-row :gutter="20">
+    <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+    <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+    <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+    <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+  </el-row>
+  <el-row :gutter="20">
+    <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+    <el-col :span="16"><div class="grid-content bg-purple"></div></el-col>
+    <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+  </el-row>
 </template>
 
-<style scoped>
-a {
-  color: #42b983;
+<style>
+.el-row {
+  margin-bottom: 20px;
 }
-
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
+.el-row:last-child {
+  margin-bottom: 0;
 }
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
+.el-col {
   border-radius: 4px;
-  color: #304455;
+}
+.bg-purple-dark {
+  background: #99a9bf;
+}
+.bg-purple {
+  background: #d3dce6;
+}
+.bg-purple-light {
+  background: #e5e9f2;
+}
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+.row-bg {
+  padding: 10px 0;
+  background-color: #f9fafc;
 }
 </style>
