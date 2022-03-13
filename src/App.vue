@@ -1,14 +1,13 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld />
-  <NavBar/>
+  <Elm/>
 </template>
 
+
 <script lang="ts">
-import NavBar from './layout/navBar.vue';
+import Elm from './layout/Elm.vue';
 
 export default {
-  components: {NavBar}
+  components: {Elm}
 };
 </script>
 
@@ -19,6 +18,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
