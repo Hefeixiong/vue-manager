@@ -30,7 +30,7 @@
   "resolved" "https://registry.npmjs.org/@ctrl/tinycolor/-/tinycolor-3.4.0.tgz"
   "version" "3.4.0"
 
-"@element-plus/icons-vue@^1.0.1":
+"@element-plus/icons-vue@^1.0.1", "@element-plus/icons-vue@^1.1.1":
   "integrity" "sha512-kRL/cWwaynmwi/6ounJxwnj316EHqAqKrl2WTCmcwiDPVqT+Wt1pSK6nAI0zUeLfe/y8NhYMB97+NDEWgNBCqA=="
   "resolved" "https://registry.npmjs.org/@element-plus/icons-vue/-/icons-vue-1.1.1.tgz"
   "version" "1.1.1"
@@ -218,6 +218,11 @@
   dependencies:
     "@vue/compiler-dom" "3.2.31"
     "@vue/shared" "3.2.31"
+
+"@vue/devtools-api@^6.0.0":
+  "integrity" "sha512-1FtbxEEHN70WGJl1b/h8nLmyN+tOHONNsNLvgVEXF/L/vBrRqQZ0kF+dev1YAz3OtxsQ1sV/vPLKwRlq1axrgg=="
+  "resolved" "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.1.0.tgz"
+  "version" "6.1.0"
 
 "@vue/reactivity-transform@3.2.31":
   "integrity" "sha512-uS4l4z/W7wXdI+Va5pgVxBJ345wyGFKvpPYtdSgvfJfX/x2Ymm6ophQlXXB6acqGHtXuBqNyyO3zVp9b1r0MOA=="
@@ -1187,6 +1192,13 @@
   "integrity" "sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw=="
   "resolved" "https://registry.npmjs.org/vue-demi/-/vue-demi-0.12.1.tgz"
   "version" "0.12.1"
+
+"vue-router@^4.0.14":
+  "integrity" "sha512-wAO6zF9zxA3u+7AkMPqw9LjoUCjSxfFvINQj3E/DceTt6uEz1XZLraDhdg2EYmvVwTBSGlLYsUw8bDmx0754Mw=="
+  "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-4.0.14.tgz"
+  "version" "4.0.14"
+  dependencies:
+    "@vue/devtools-api" "^6.0.0"
 
 "vue-tsc@^0.29.8":
   "integrity" "sha512-pT0wLRjvRuSmB+J4WJT6uuV9mO0KtSSXEAtaVXZQzyk5+DJdbLIQTbRce/TXSkfqt1l1WogO78RjtOJFiMCgfQ=="

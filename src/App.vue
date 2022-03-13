@@ -1,14 +1,9 @@
 <template>
-  <Elm/>
+  <router-view/>
 </template>
 
+<script setup lang="ts">
 
-<script lang="ts">
-import Elm from './layout/Elm.vue';
-
-export default {
-  components: {Elm}
-};
 </script>
 
 <style>
