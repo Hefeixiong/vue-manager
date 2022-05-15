@@ -1,8 +1,11 @@
 <template>
   <div class="layout">
     <nav-bar class="navbar-wrapper"></nav-bar>
-    <menu-bar class="menu-wrapper"></menu-bar>
-    <main-app class="main-wrapper"></main-app>
+
+    <div class="content">
+      <menu-bar class="menu-wrapper"></menu-bar>
+      <main-app class="main-wrapper"></main-app>
+    </div>
   </div>
 </template>
 
@@ -14,5 +17,31 @@ import MainApp from "./Main.vue"
 </script>
 
 <style lang="scss" scoped>
+.layout {
+  height: 100vh;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
 
+  > .navbar-wrapper {
+    flex-shrink: 0;
+    border: 1px solid yellow;
+  }
+  > .content {
+    flex-grow: 1;
+  }
+}
+
+.content {
+  display: flex;
+
+  > .menu-wrapper {
+    flex-shrink: 0;
+    border: 1px solid green;
+  }
+
+  > .main-wrapper {
+    flex-grow: 1;
+  }
+}
 </style>
