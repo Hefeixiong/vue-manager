@@ -1,10 +1,15 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import Elm from '@/layout/Elm.vue'
+import Index from '@/layout/index.vue'
 
 const routes = [
   {
     path: '/',
     component: Elm
+  },
+  {
+    path: '/index',
+    component: Index
   }
 ]
 
