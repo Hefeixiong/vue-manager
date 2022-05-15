@@ -1,16 +1,11 @@
 import {createRouter, createWebHistory} from 'vue-router';
-import Elm from '@/layout/Elm.vue'
-import Index from '@/layout/index.vue'
+import Layout from '@/layout/index.vue'
 
 const routes = [
   {
     path: '/',
-    component: Elm
+    component: Layout
   },
-  {
-    path: '/index',
-    component: Index
-  }
 ]
 
 const history = createWebHistory()
