@@ -31,12 +31,15 @@
       </el-sub-menu>
     </el-sub-menu>
 
-    <el-menu-item index="2">
-      <el-icon>
-        <User/>
-      </el-icon>
-      <router-link to="/user">用户管理</router-link>
-    </el-menu-item>
+    <router-link to="/user">
+      <el-menu-item index="2">
+        <el-icon>
+          <User/>
+        </el-icon>
+        <span>用户管理</span>
+      </el-menu-item>
+    </router-link>
+
 
     <el-menu-item index="3" disabled>
       <el-icon>
