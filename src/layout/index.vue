@@ -19,13 +19,12 @@ import MainApp from "./Main.vue"
 <style lang="scss" scoped>
 .layout {
   height: 100vh;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
 
   > .navbar-wrapper {
     flex-shrink: 0;
-    border: 1px solid yellow;
+    z-index: 10;
   }
   > .content {
     flex-grow: 1;
@@ -37,7 +36,6 @@ import MainApp from "./Main.vue"
 
   > .menu-wrapper {
     flex-shrink: 0;
-    border: 1px solid green;
   }
 
   > .main-wrapper {
