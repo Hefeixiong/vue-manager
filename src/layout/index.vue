@@ -4,8 +4,7 @@
 
     <div class="content">
       <menu-bar class="menu-wrapper"></menu-bar>
-<!--      <main-app class="main-wrapper"/>-->
-      <router-view/>
+      <main-app class="main-wrapper"/>
     </div>
   </div>
 </template>

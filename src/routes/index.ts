@@ -7,13 +7,17 @@ const routes = [
     path: '/',
     component: Layout
   },
+  // {
+  //   path: '/user',
+  //   component: User
+  // },
   {
-    path: '/user',
+    path: '/',
     component: Layout,
     children: [
       {
         path: "user",
-        component: Test
+        component: User
       }
     ]
   }

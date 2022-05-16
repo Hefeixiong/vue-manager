@@ -1,8 +1,10 @@
 <template>
-    <router-view />
+  <transition mode="out-in">
+    <router-view> </router-view>
+  </transition>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 
 </script>
 
