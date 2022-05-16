@@ -35,7 +35,7 @@
       <el-icon>
         <User/>
       </el-icon>
-      <template #title>用户管理</template>
+      <router-link to="/user">用户管理</router-link>
     </el-menu-item>
 
     <el-menu-item index="3" disabled>

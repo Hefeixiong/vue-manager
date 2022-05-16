@@ -4,7 +4,8 @@
 
     <div class="content">
       <menu-bar class="menu-wrapper"></menu-bar>
-      <main-app class="main-wrapper"></main-app>
+<!--      <main-app class="main-wrapper"/>-->
+      <router-view/>
     </div>
   </div>
 </template>
@@ -40,6 +41,7 @@ import MainApp from "./Main.vue"
 
   > .main-wrapper {
     flex-grow: 1;
+    overflow: auto;
   }
 }
 </style>
