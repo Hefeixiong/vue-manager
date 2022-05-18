@@ -3,58 +3,66 @@
   <!--      <el-radio-button :label="false">expand</el-radio-button>-->
   <!--      <el-radio-button :label="true">collapse</el-radio-button>-->
   <!--    </el-radio-group>-->
-  <el-menu
-      default-active="2"
-      class="el-menu-vertical-demo"
-      :collapse="isCollapse"
-      @open="handleOpen"
-      @close="handleClose"
-  >
-    <el-sub-menu index="1">
-      <template #title>
+  <div class="menu">
+    <el-menu
+        default-active="2"
+        class="el-menu-vertical-demo"
+        :collapse="isCollapse"
+        @open="handleOpen"
+        @close="handleClose"
+    >
+      <el-menu-item index="1">
         <el-icon>
           <HomeFilled/>
         </el-icon>
-        <span>首页</span>
-      </template>
-      <el-menu-item-group>
-        <template #title><span>Group One</span></template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-menu-item-group>
-      <el-sub-menu index="1-4">
-        <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>
-
-    <router-link to="/user">
-      <el-menu-item index="2">
-        <el-icon>
-          <User/>
-        </el-icon>
-        <span>用户管理</span>
+        <template #title>首页</template>
       </el-menu-item>
-    </router-link>
 
+      <router-link to="/user">
+        <el-menu-item index="2">
+          <el-icon>
+            <User/>
+          </el-icon>
+          <span>用户管理</span>
+        </el-menu-item>
+      </router-link>
 
-    <el-menu-item index="3" disabled>
-      <el-icon>
-        <document/>
-      </el-icon>
-      <template #title>禁用</template>
-    </el-menu-item>
+      <el-sub-menu index="3">
+        <template #title>
+          <el-icon>
+            <Menu/>
+          </el-icon>
+          <span>组件</span>
+        </template>
+        <el-menu-item-group>
+          <template #title><span>Group One</span></template>
+          <el-menu-item index="3-1">item one</el-menu-item>
+          <el-menu-item index="3-2">item two</el-menu-item>
+        </el-menu-item-group>
+        <el-menu-item-group title="Group Two">
+          <el-menu-item index="3-3">item three</el-menu-item>
+        </el-menu-item-group>
+        <el-sub-menu index="3-4">
+          <template #title><span>item four</span></template>
+          <el-menu-item index="3-4-1">item one</el-menu-item>
+        </el-sub-menu>
+      </el-sub-menu>
 
-    <el-menu-item index="4">
-      <el-icon>
-        <setting/>
-      </el-icon>
-      <template #title>设置</template>
-    </el-menu-item>
-  </el-menu>
+      <el-menu-item index="4" disabled>
+        <el-icon>
+          <document/>
+        </el-icon>
+        <template #title>禁用</template>
+      </el-menu-item>
+
+      <el-menu-item index="5">
+        <el-icon>
+          <setting/>
+        </el-icon>
+        <template #title>设置</template>
+      </el-menu-item>
+    </el-menu>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -63,6 +71,7 @@ import {
   Document,
   HomeFilled,
   User,
+  Menu,
   Setting,
 } from '@element-plus/icons-vue';
 
@@ -76,8 +85,15 @@ const handleClose = (key: string, keyPath: string[]) => {
 </script>
 
 <style lang="scss" scoped>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
+
+.menu {
+
+  > .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
+
 }
+
+
 </style>

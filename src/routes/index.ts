@@ -5,14 +5,6 @@ import Test from '@/view/Test.vue'
 const routes = [
   {
     path: '/',
-    component: Layout
-  },
-  // {
-  //   path: '/user',
-  //   component: User
-  // },
-  {
-    path: '/',
     component: Layout,
     children: [
       {
