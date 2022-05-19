@@ -2,7 +2,7 @@
   <el-table :data="filterTableData" style="width: 100%">
     <el-table-column label="Date" prop="date" />
     <el-table-column label="Name" prop="name" />
-    <el-table-column label="address" prop="address" />
+    <el-table-column label="Address" prop="address" />
     <el-table-column align="right">
       <template #header>
         <el-input v-model="search" size="small" placeholder="Type to search" />
@@ -23,50 +23,35 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
+import {useStore} from 'vuex';
+import {UserState} from '../store/modules/user';
 
-interface User {
-  date: string
-  name: string
-  address: string
-}
+const store = useStore()
+
+const tableData: UserState = [{
+  name: store.state.user.name,
+  date: store.state.user.date,
+  address: store.state.user.address
+}]
 
 const search = ref('')
+
 const filterTableData = computed(() =>
-    tableData.filter(
+    Object.values(tableData).filter(
         (data) =>
             !search.value ||
             data.name.toLowerCase().includes(search.value.toLowerCase())
     )
 )
-const handleEdit = (index: number, row: User) => {
+
+const handleEdit = (index: number, row: UserState) => {
   console.log(index, row)
 }
-const handleDelete = (index: number, row: User) => {
+const handleDelete = (index: number, row: UserState) => {
   console.log(index, row)
 }
 
-const tableData: User[] = [
-  {
-    date: '2016-05-03',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-02',
-    name: 'John',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-04',
-    name: 'Morgan',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-01',
-    name: 'Jessy',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-]
+
 </script>
 
 <style lang="scss" scoped>
