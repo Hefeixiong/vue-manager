@@ -1,7 +1,11 @@
 <template>
-  <transition mode="out-in">
-    <router-view/>
-  </transition>
+  <router-view v-slot="{Component}">
+    <transition mode="out-in">
+      <keep-alive>
+        <component :is="Component"/>
+      </keep-alive>
+    </transition>
+  </router-view>
 </template>
 
 <script lang="ts" setup>
