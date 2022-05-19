@@ -28,7 +28,8 @@ import {UserState} from '../store/modules/user';
 
 const store = useStore()
 
-const tableData: UserState = [{
+//tableDate是Array
+const tableData = [{
   name: store.state.user.name,
   date: store.state.user.date,
   address: store.state.user.address
@@ -37,7 +38,7 @@ const tableData: UserState = [{
 const search = ref('')
 
 const filterTableData = computed(() =>
-    Object.values(tableData).filter(
+    tableData.filter(
         (data) =>
             !search.value ||
             data.name.toLowerCase().includes(search.value.toLowerCase())
@@ -50,7 +51,6 @@ const handleEdit = (index: number, row: UserState) => {
 const handleDelete = (index: number, row: UserState) => {
   console.log(index, row)
 }
-
 
 </script>
 
