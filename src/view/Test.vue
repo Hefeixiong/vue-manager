@@ -1,9 +1,20 @@
 <template>
-  <div>ssss</div>
+  <div>{{ message }}</div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import axios from 'axios';
 
+let a 
+
+const message = axios.get('static/user.json').then(response => {
+  let data = response.data
+  return data
+})
+
+
+
+console.log(message)
 </script>
 
 <style lang="scss" scoped>

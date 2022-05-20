@@ -12,6 +12,10 @@ const routes = [
         component: User
       }
     ]
+  },
+  {
+    path: '/test',
+    component: Test
   }
 ]
 
