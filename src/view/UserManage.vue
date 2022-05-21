@@ -23,8 +23,9 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import {useStore} from 'vuex';
+import {mapActions, useStore} from 'vuex';
 import {UserState} from '../store/modules/user';
+
 
 const store = useStore()
 
@@ -34,6 +35,13 @@ const tableData = [{
   date: store.state.user.date,
   address: store.state.user.address
 }]
+
+const userInfo: UserState = {
+  name: 'hefx',
+  date: '2022-05-21',
+  address: 'hunan',
+  avatar: ''
+}
 
 const search = ref('')
 
@@ -47,6 +55,12 @@ const filterTableData = computed(() =>
 
 const handleEdit = (index: number, row: UserState) => {
   console.log(index, row)
+  store.dispatch('getInfo', userInfo)
+  const tableData = [{
+  name: store.state.user.name,
+  date: store.state.user.date,
+  address: store.state.user.address
+}]
 }
 const handleDelete = (index: number, row: UserState) => {
   console.log(index, row)
@@ -57,3 +71,7 @@ const handleDelete = (index: number, row: UserState) => {
 <style lang="scss" scoped>
 
 </style>
+
+function getInfo() {
+  throw new Error('Function not implemented.');
+}

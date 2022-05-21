@@ -5,8 +5,6 @@
 <script lang="ts" setup>
 import axios from 'axios';
 
-let a 
-
 const message = axios.get('static/user.json').then(response => {
   let data = response.data
   return data
