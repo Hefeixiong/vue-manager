@@ -29,10 +29,11 @@ const getters = {
 
 const mutations = {
   setInfo (state: UserState ,payload: UserState) {
-    state.name = payload.name
-    state.date = payload.date
-    state.address = payload.address
-    state.avatar = payload.avatar
+    // state.name = payload.name
+    // state.date = payload.date
+    // state.address = payload.address
+    // state.avatar = payload.avatar
+    state = payload
     debugger
     console.log('set success')
   },
