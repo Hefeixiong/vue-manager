@@ -36,12 +36,9 @@ const tableData = [{
   address: store.state.user.address
 }]
 
-const userInfo: UserState = {
-  name: 'hefx',
-  date: '2022-05-21',
-  address: 'hunan',
-  avatar: ''
-}
+
+  store.dispatch('getInfo')
+
 
 const search = ref('')
 
@@ -53,9 +50,10 @@ const filterTableData = computed(() =>
     )
 )
 
+
+
 const handleEdit = (index: number, row: UserState) => {
   console.log(index, row)
-  store.dispatch('getInfo', userInfo)
 }
 const handleDelete = (index: number, row: UserState) => {
   console.log(index, row)

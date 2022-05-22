@@ -20,9 +20,7 @@ export default function request ( url = '', type = 'GET', data = {}) {
         } else {
             option.data = data
         }
-        console.log(option)
         axios(option).then(res => {
-            debugger
             if (res.status === 200 ) {
                 resolve(res.data)
             } else {

@@ -29,13 +29,11 @@ const getters = {
 
 const mutations = {
   setInfo (state: UserState ,payload: UserState) {
-    // state.name = payload.name
-    // state.date = payload.date
-    // state.address = payload.address
-    // state.avatar = payload.avatar
-    state = payload
-    debugger
-    console.log('set success')
+    state.name = payload.name
+    state.date = payload.date
+    state.address = payload.address
+    state.avatar = payload.avatar
+    console.log('setUserInfo success...')
   },
   getInfo () {
     console.log('hi')
@@ -47,7 +45,6 @@ const actions = {
   async getInfo ({commit, state}) {
     const res = await User.getInfo();
     commit('setInfo', res);
-    debugger;
   }
 }
 
