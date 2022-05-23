@@ -4,6 +4,7 @@ import User from "../../api/user";
 export interface UserState {
   name: String;
   date: String;
+  password: String,
   address: String;
   avatar: String
 }
@@ -11,6 +12,7 @@ export interface UserState {
 const state: UserState = {
   name: '', 
   date: '', 
+  password: '',
   address: '',
   avatar: ''
 };
@@ -31,6 +33,7 @@ const mutations = {
   setInfo (state: UserState ,payload: UserState) {
     state.name = payload.name
     state.date = payload.date
+    state.password = payload.password
     state.address = payload.address
     state.avatar = payload.avatar
     console.log('setUserInfo success...')
@@ -45,6 +48,12 @@ const actions = {
   async getInfo ({commit, state}) {
     const res = await User.getInfo();
     commit('setInfo', res);
+  },
+  //@ts-ignore
+  async loginUser ({commit}, {username = '', password = ''}) {
+    const res = await User.login(username, password)
+    commit('setInfo', res)
+    debugger
   }
 }
 

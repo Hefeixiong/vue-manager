@@ -30,8 +30,7 @@ import {UserState} from '../store/modules/user';
 
 const store = useStore()
 
-store.dispatch('getInfo')
-console.log(store.state.user.name)
+// store.dispatch('getInfo')
 //tableDate是Array
 const tableData = [{
   name: store.state.user.name,

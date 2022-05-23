@@ -19,7 +19,11 @@
 
 <script lang="ts" setup>
 import { reactive } from 'vue'
+import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 
+const strore = useStore()
+const router = useRouter()
 // do not use same name with ref
 const form = reactive({
   name: '',
@@ -27,7 +31,12 @@ const form = reactive({
 })
 
 const onSubmit = () => {
-  console.log('submit!', form)
+    const username = form.name
+    const password = form.password
+    strore.dispatch('loginUser', {username, password})
+    console.log('login success!')
+    router.push('./')
+    
 }
 </script>
 
@@ -39,8 +48,6 @@ const onSubmit = () => {
         border: 1px solid red;
         height: 600px;
 
-        > login-from {
-            border: 1px solid red;
-        }
+    
     }
 </style>   
