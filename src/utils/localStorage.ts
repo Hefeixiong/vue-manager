@@ -3,5 +3,7 @@ export function add (key: string, data: {}) {
 }
 
 export function get (key: string) {
-    return JSON.parse(localStorage.getItem(key) || '')
+    //没有做localStorage为空的逻辑
+    //@ts-ignore 
+    return JSON.parse(localStorage.getItem(key)) || ''
 }

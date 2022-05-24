@@ -35,7 +35,6 @@ const onLogin = () => {
     const password = form.password
     //什么用户都能能登陆
     strore.dispatch('loginUser', {username, password})
-    console.log('login success!')
     router.push('./')
     
 }

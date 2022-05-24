@@ -24,25 +24,19 @@
 <script lang="ts" setup>
 
 import { computed, ref } from 'vue'
-import { mapState, useStore} from 'vuex';
+import { useStore} from 'vuex';
 import {UserState} from '../store/modules/user';
 
 
 const store = useStore()
-const arr = mapState({})
-console.log(arr)
-// store.dispatch('getInfo')
 //tableDate是Array
-const tableData = [{
-  name: store.getters.getName,
-  date: store.getters.getData,
-  address: store.getters.getAddress
-}]
+const tableData = store.getters.getUsers
 
 const search = ref('')
 
 const filterTableData = computed(() =>
     tableData.filter(
+        //@ts-ignore
         (data) =>
             !search.value ||
             data.name.toLowerCase().includes(search.value.toLowerCase())

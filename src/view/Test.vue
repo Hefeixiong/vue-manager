@@ -1,18 +1,21 @@
 <template>
-  <div>{{ message }}</div>
+  <div>{{tableData}}</div>
 </template>
 
 <script lang="ts" setup>
-import axios from 'axios';
-
-const message = axios.get('static/user.json').then(response => {
-  let data = response.data
-  return data
-})
+import { useStore } from "vuex";
+import { get } from "../utils/localStorage";
+const store = useStore()
 
 
 
-console.log(message)
+const username = 'hfx'
+const password = '123456'
+store.dispatch('loginUser' , {username, password})
+const tableData = get('user')
+debugger
+console.log(tableData)
+
 </script>
 
 <style lang="scss" scoped>

@@ -1,8 +1,18 @@
-{
+[{
   "id": 1,
   "name": "贺飞雄",
   "password": "123456",
   "date": "2022-05-20",
   "address": "深圳宝安",
   "avatar": "https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+},
+{
+  "id": 2,
+  "name": "hefx",
+  "password": "123456",
+  "date": "2022-05-20",
+  "address": "深圳宝安",
+  "avatar": "https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
 }
+
+]
