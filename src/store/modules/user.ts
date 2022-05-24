@@ -25,11 +25,29 @@ const getters = {
     return state.name
   },
   getData: () => {
+    if (!state.date) {
+      return state.date = get('user').date
+    }
     return state.date 
   },
+  getPassword: () => {
+    if (!state.password) {
+      return state.password = get('user').password
+    }
+    return state.password 
+  },
   getAddress: () => {
+    if (!state.address) {
+      return state.address = get('user').address
+    }
     return state.address
-  }
+  },
+  getAvatar: () => {
+    if (!state.avatar) {
+      return state.avatar = get('user').avatar
+    }
+    return state.avatar 
+  },
 };
 
 const mutations = {

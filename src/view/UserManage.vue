@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 
-import { computed, onMounted, ref } from 'vue'
+import { computed, ref } from 'vue'
 import { mapState, useStore} from 'vuex';
 import {UserState} from '../store/modules/user';
 
@@ -31,12 +31,12 @@ import {UserState} from '../store/modules/user';
 const store = useStore()
 const arr = mapState({})
 console.log(arr)
-store.dispatch('getInfo')
+// store.dispatch('getInfo')
 //tableDate是Array
 const tableData = [{
-  name: store.state.user.name,
-  date: store.state.user.date,
-  address: store.state.user.address
+  name: store.getters.getName,
+  date: store.getters.getData,
+  address: store.getters.getAddress
 }]
 
 const search = ref('')
