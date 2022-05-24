@@ -10,7 +10,7 @@
             </el-form-item>
         
             <el-form-item>
-                <el-button type="primary" @click="onSubmit">Login</el-button>
+                <el-button type="primary" @click="onLogin">Login</el-button>
                 <el-button>Register</el-button>
             </el-form-item>
         </el-form>
@@ -30,9 +30,10 @@ const form = reactive({
   password: '',
 })
 
-const onSubmit = () => {
+const onLogin = () => {
     const username = form.name
     const password = form.password
+    //什么用户都能能登陆
     strore.dispatch('loginUser', {username, password})
     console.log('login success!')
     router.push('./')

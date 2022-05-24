@@ -24,19 +24,21 @@
 <script lang="ts" setup>
 
 import { computed, onMounted, ref } from 'vue'
-import {mapActions, useStore} from 'vuex';
+import { mapState, useStore} from 'vuex';
 import {UserState} from '../store/modules/user';
 
 
 const store = useStore()
-
-// store.dispatch('getInfo')
+const arr = mapState({})
+console.log(arr)
+store.dispatch('getInfo')
 //tableDate是Array
 const tableData = [{
   name: store.state.user.name,
   date: store.state.user.date,
   address: store.state.user.address
 }]
+
 const search = ref('')
 
 const filterTableData = computed(() =>

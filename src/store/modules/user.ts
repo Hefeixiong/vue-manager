@@ -1,5 +1,5 @@
 import User from "../../api/user";
-
+import {add, get} from "../../utils/localStorage"
 
 export interface UserState {
   name: String;
@@ -19,7 +19,10 @@ const state: UserState = {
 
 const getters = {
   getName: () => {
-    return state.name 
+    if (!state.name) {
+      return state.name = get('user').name
+    }
+    return state.name
   },
   getData: () => {
     return state.date 
@@ -52,6 +55,10 @@ const actions = {
   //@ts-ignore
   async loginUser ({commit}, {username = '', password = ''}) {
     const res = await User.login(username, password)
+    //@ts-ignore
+    add('user', res)
+    const test = get('user')
+    console.log(test)
     commit('setInfo', res)
     debugger
   }
