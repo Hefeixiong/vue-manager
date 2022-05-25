@@ -28,12 +28,14 @@ const state: Users = {
         date: '', 
         password: '',
         address: '',
-        avatar: ''}
+        avatar: ''
+      }
   ]
 };
 
 const getters = {
   getUsers: () => {
+    console.log('getUser success...')
     return state.users = get('user')
   }
 
@@ -44,13 +46,9 @@ const mutations = {
   setInfo (state: Users ,payload) {
     add('user', payload)
     if (!state.users) {
-      state.users = get('user')
-      debugger
+      console.log('localStorage get')
+      // state.users = get('user')
     } 
-    console.log('setUserInfo success...')
-  },
-  getInfo () {
-    console.log('hi')
   }
 };
 

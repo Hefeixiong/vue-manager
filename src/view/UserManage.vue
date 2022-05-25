@@ -30,7 +30,7 @@ import {UserState} from '../store/modules/user';
 
 const store = useStore()
 //tableDate是Array
-const tableData = store.getters.getUsers
+const tableData = store.getters.getUsers || []
 
 const search = ref('')
 
@@ -57,7 +57,3 @@ const handleDelete = (index: number, row: UserState) => {
 <style lang="scss" scoped>
 
 </style>
-
-function getInfo() {
-  throw new Error('Function not implemented.');
-}
