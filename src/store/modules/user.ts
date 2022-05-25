@@ -1,3 +1,4 @@
+import { store } from "..";
 import User from "../../api/user";
 import {add, get} from "../../utils/localStorage"
 
@@ -36,7 +37,9 @@ const state: Users = {
 const getters = {
   getUsers: () => {
     console.log('getUser success...')
-    return state.users = get('user')
+    if (localStorage.length > 0) {
+      return state.users = get('user')
+    }
   }
 
 };
@@ -45,10 +48,6 @@ const mutations = {
   //@ts-ignore
   setInfo (state: Users ,payload) {
     add('user', payload)
-    if (!state.users) {
-      console.log('localStorage get')
-      // state.users = get('user')
-    } 
   }
 };
 

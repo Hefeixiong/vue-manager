@@ -23,7 +23,6 @@ export default function request ( url = '', type = 'GET', data = {}) {
         axios(option).then(res => {
             if (res.status === 200 ) {
                 resolve(res.data)
-                debugger
             } else {
                 reject(res.data)
             }

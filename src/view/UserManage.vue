@@ -30,6 +30,9 @@ import {UserState} from '../store/modules/user';
 
 const store = useStore()
 //tableDate是Array
+if (store.getters.getters === undefined) {
+    store.dispatch('getInfo')
+}
 const tableData = store.getters.getUsers || []
 
 const search = ref('')
