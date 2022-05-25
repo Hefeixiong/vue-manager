@@ -1,14 +1,6 @@
-import { store } from "..";
 import User from "../../api/user";
 import {add, get} from "../../utils/localStorage"
 
-export interface UserState {
-  name: String;
-  date: String;
-  password: String,
-  address: String;
-  avatar: String
-}
 //用户组
 interface Users {
   users: [

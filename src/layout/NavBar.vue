@@ -19,7 +19,7 @@
            </span>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item command="a">退出登陆</el-dropdown-item>
+              <el-dropdown-item command="loginOut">退出登陆</el-dropdown-item>
               <el-dropdown-item command="b" disabled>不能用</el-dropdown-item>
             </el-dropdown-menu>
           </template>
@@ -30,7 +30,6 @@
 </template>
 
 <script setup lang="ts">
-import {ElMessage} from 'element-plus';
 import {ArrowDown} from '@element-plus/icons-vue';
 
 const handleCommand = (command: string | number | object) => {
@@ -88,3 +87,11 @@ const handleCommand = (command: string | number | object) => {
 }
 
 </style>
+
+function ElMessage(arg0: string) {
+  throw new Error('Function not implemented.');
+}
+
+function ElMessage(arg0: string) {
+  throw new Error('Function not implemented.');
+}

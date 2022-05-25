@@ -24,10 +24,16 @@
 <script lang="ts" setup>
 
 import { computed, ref } from 'vue'
-import { useStore} from 'vuex';
-import {UserState} from '../store/modules/user';
+import { mapState, useStore} from 'vuex';
 
 
+interface UserState {
+  name: String;
+  date: String;
+  password: String,
+  address: String;
+  avatar: String
+}
 const store = useStore()
 //tableDate是Array
 if (store.getters.getters === undefined) {
