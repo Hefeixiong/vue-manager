@@ -7,6 +7,10 @@ const routes = [
     redirect: "/user",
     children: [
       {
+        path: "dashborad",
+        component: () => import ('@/view/Dashborad.vue')
+      },
+      {
         path: "user",
         component: () => import('@/view/UserManage.vue')
       }

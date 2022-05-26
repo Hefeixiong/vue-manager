@@ -11,12 +11,14 @@
         @open="handleOpen"
         @close="handleClose"
     >
-      <el-menu-item index="1">
-        <el-icon>
-          <HomeFilled/>
-        </el-icon>
-        <template #title>首页</template>
-      </el-menu-item>
+      <router-link to="/dashborad">
+        <el-menu-item index="1">
+          <el-icon>
+            <HomeFilled/>
+          </el-icon>
+          <template #title>首页</template>
+        </el-menu-item>
+      </router-link>
 
       <router-link to="/user">
         <el-menu-item index="2">
