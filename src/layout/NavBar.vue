@@ -31,9 +31,14 @@
 
 <script setup lang="ts">
 import {ArrowDown} from '@element-plus/icons-vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
 
 const handleCommand = (command: string | number | object) => {
   ElMessage(`click on item ${command}`);
+  router.push('/login')
+
 };
 </script>
 

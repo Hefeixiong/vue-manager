@@ -36,6 +36,7 @@ declare module 'vue' {
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTimePicker: typeof import('element-plus/es')['ElTimePicker']
+    TodoList: typeof import('./src/components/TodoList.vue')['default']
   }
 }
 

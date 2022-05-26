@@ -4,7 +4,7 @@ const routes = [
   {
     path: '/',
     component: () => import('@/layout/index.vue'),
-    redirect: "/user",
+    redirect: "/dashborad",
     children: [
       {
         path: "dashborad",
