@@ -35,7 +35,12 @@ const todoList = ref([
 ])
 
 function addList() {
-  todoList.value.push({id: id++, text: newList.value})
+  if (newList.value !== '') {
+    todoList.value.push({id: id++, text: newList.value})
+  } else {
+    ElMessage('请输入内容')
+  }
+  
 }
 </script>
 
