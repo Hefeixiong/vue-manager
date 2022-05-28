@@ -9,7 +9,7 @@
     <div class="card-body" v-for="todo in todoList" :key="todo.id">
       <el-checkbox v-on:change="isDone"/>
       <el-card  class="text item" :body-style="{padding: '9px'}">{{todo.text }}</el-card>
-      <el-button type="danger" :icon="Delete" circle />
+      <el-button type="danger" :icon="Delete" @click="removeList(todo)" circle />
     </div>
   </el-card>
 </template>
@@ -37,10 +37,15 @@ const todoList = ref([
 function addList() {
   if (newList.value !== '') {
     todoList.value.push({id: id++, text: newList.value})
+    newList.value = ''
   } else {
     ElMessage('请输入内容')
   }
-  
+}
+//@ts-ignore
+function removeList (todo) {
+  console.log(todo)
+  todoList.value = todoList.value.filter((t) => t !== todo)
 }
 </script>
 
