@@ -7,7 +7,6 @@
       </div>
     </template>
     <div class="card-body" v-for="todo in todoList" :key="todo.id">
-      <el-checkbox v-on:change="isDone"/>
       <el-card  class="text item" :body-style="{padding: '9px'}">{{todo.text }}</el-card>
       <el-button type="danger" :icon="Delete" @click="removeList(todo)" circle />
     </div>
@@ -25,26 +24,30 @@ import {
   Star,
 } from '@element-plus/icons-vue'
 let id = 0
-let isDone = false
 const newList =  ref('')
 const todoList = ref([
-  {id: id++, text: '写代码'},
-  {id: id++, text: '看文档'},
-  {id: id++, text: '提交代码'},
-  {id: id++, text: '我还能继续'},
+  {id: id++, text: '写代码', done: true},
+  {id: id++, text: '看文档', done: true},
+  {id: id++, text: '提交代码', done: true},
+  {id: id++, text: '我还能继续', done: true},
 ])
 
 function addList() {
   if (newList.value !== '') {
-    todoList.value.push({id: id++, text: newList.value})
+    todoList.value.push({id: id++, text: newList.value, done: false})
     newList.value = ''
   } else {
+    //@ts-ignore
     ElMessage('请输入内容')
   }
 }
 //@ts-ignore
-function removeList (todo) {
+function doneList (todo) {
   console.log(todo)
+
+}
+//@ts-ignore
+function removeList (todo) {
   todoList.value = todoList.value.filter((t) => t !== todo)
 }
 </script>
