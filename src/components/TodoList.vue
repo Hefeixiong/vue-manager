@@ -62,7 +62,7 @@ function removeList (todo) {
 }
 .card-body {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   > el-radio {
     margin: 0;
@@ -75,6 +75,7 @@ function removeList (todo) {
 
   > .item {
       margin-bottom: 4px;
+      border-radius: 20px;
     }
 }
 
