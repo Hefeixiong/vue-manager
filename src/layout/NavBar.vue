@@ -36,6 +36,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 const handleCommand = (command: string | number | object) => {
+  //@ts-ignore
   ElMessage(`click on item ${command}`);
   router.push('/login')
 
